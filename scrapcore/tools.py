@@ -151,13 +151,13 @@ class Proxies():
                 p.proto = proxy.proto
 
                 try:
-+                   session.add(p)
-+                   session.commit()
-+               except Exception:
-+                   # this happens when we update a line and change the IP to an 
-+                   # already existing IP
-+                   # (unique constraint of the column is then not respected)
-+                   pass
+                    session.add(p)
+                    session.commit()
+                except Exception:
+                    # this happens when we update a line and change the IP to an 
+                    # already existing IP
+                    # (unique constraint of the column is then not respected)
+                    pass
 
 
 class ShowProgressQueue(threading.Thread):
