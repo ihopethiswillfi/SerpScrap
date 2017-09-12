@@ -581,7 +581,7 @@ class SelScrape(SearchEngineScrape, threading.Thread):
             except Exception:
                 logger.error('Scrape Exception pass. Selector: ' + str(selector))
                 self._save_debug_screenshot()
-                pass
+                raise SeleniumSearchError('Stop Scraping, CSS_SELECTOR not found.')
 
         elif self.search_type == 'image':
             self.wait_until_title_contains_keyword()
